@@ -1,5 +1,6 @@
 (ns rpg-story-bot.forms
-  (:require [story-elements.beings :as seb])
+  (:require [story-elements.beings :as sb]
+            [story-elements.titles :as st])
   (:gen-class))
 
 (defn since-running
@@ -7,6 +8,6 @@
    Since __ we have been running from __"
   []
   (str "Ever since the "
-       (rand-nth seb/humanoids)
+       (rand-nth sb/humanoids)
        " attacked, we have been running from "
-       (seb/titled-humanoid-individual (rand-nth seb/humanoid-individuals))))
+       (st/title-individual (rand-nth sb/humanoid-individuals))))
