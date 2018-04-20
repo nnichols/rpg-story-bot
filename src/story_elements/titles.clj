@@ -38,6 +38,7 @@
    "of the East"
    "of the West"
    "of the Realm"
+   "of the Dead"
    "the Cruel"
    "the Brave"
    "the Coward"])
