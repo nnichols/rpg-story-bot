@@ -11,7 +11,8 @@
    "black"
    "pink"
    "orange"
-   "purple"])
+   "purple"
+   "violet"])
 
 (def metallics
   "A vector of strings of metallic colors"
@@ -27,6 +28,7 @@
   ["ravenous"
    "infected"
    "diseased"
+   "roaming"
    "wild"
    "dire"
    "hungry"])
@@ -38,3 +40,20 @@
    "adult"
    "elderly"
    "ancient"])
+
+(def elements
+  "A vector of strings describing primal elements"
+  ["fire"
+   "water"
+   "earth"
+   "air"
+   "clay"
+   "stone"
+   "ice"])
+
+(def demonic
+  "A vector of strings describing demonic elements"
+  ["pain"
+   "bone"
+   "shadow"
+   "chain"])

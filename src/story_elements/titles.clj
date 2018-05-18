@@ -58,15 +58,27 @@
    "the White"
    "the Black"])
 
+(defn apply-prefix-title
+  "Given person, return that same person with a prefix title"
+  [person]
+  (str (rand-nth prefix-titles) " " person))
+
+(defn apply-suffix-title
+  "Given person, return that same person with a suffix title"
+  [person]
+  (str person " " (rand-nth suffix-titles)))
+
+(defn apply-both-titles
+  "Given person, return that same person with both a prefix
+   and a suffix title"
+  [person]
+  (apply-prefix-title (apply-suffix-title person)))
+
 (defn title-individual
   "Given person, return that same person with either a prefix title,
       a suffix titles or both title forms added"
   [person]
   (condp = (rand-int 3)
-    1 (str (rand-nth prefix-titles) " " person)
-    2 (str person " " (rand-nth suffix-titles))
-    (str (rand-nth prefix-titles)
-         " "
-         person
-         " "
-         (rand-nth suffix-titles))))
+    1 (apply-prefix-title person)
+    2 (apply-suffix-title person)
+    (apply-both-titles person)))
