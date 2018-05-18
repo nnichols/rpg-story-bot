@@ -57,3 +57,16 @@
    "bone"
    "shadow"
    "chain"])
+
+(def dragon-colors
+  "A vector of strings containing permissible dragon colors"
+  ["Black"
+   "Blue"
+   "Brass"
+   "Bronze"
+   "Copper"
+   "Gold"
+   "Green"
+   "Red"
+   "Silver"
+   "White"])

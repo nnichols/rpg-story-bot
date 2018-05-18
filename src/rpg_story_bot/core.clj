@@ -7,6 +7,6 @@
   "Create a message and tweet it out"
   [& args]
   (twit/tweet
-    (str "Finally making some updates to the plot generator "
-         twit/rpg-story-bot-hashtag))
+   (str "Finally making some updates to the plot generator "
+        twit/rpg-story-bot-hashtag))
   (System/exit 0))
