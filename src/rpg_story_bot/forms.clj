@@ -34,4 +34,12 @@
        " "
        (util/get-random-map-vector pa/races-map)
        " "
-       (util/get-random-map-vector pa/classes-map)))       
+       (util/get-random-map-vector pa/classes-map)))
+
+(defn random-message
+  "Generate a random tweet derived from the above forms"
+  []
+  (condp = (rand-int 3)
+    1 (since-running)
+    2 (into-a-bar)
+    (next-character)))

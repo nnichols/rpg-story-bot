@@ -3,15 +3,23 @@
             [rpg-story-bot.twitter-interface :as twit])
   (:gen-class))
 
-(defn get-random-map-vector
-  "Draw a random inner member from a map of vectors"
-  [target-map]
-  (rand-nth (get target-map (rand-nth (keys targer-map)))))
+(defn build-messages
+  "Create n random messages"
+  [n]
+  (take n (repeatedly #(fm/random-message))))
+
+(defn tweetable-message
+   "Takes a collection of messages and returns the first one that is tweetable,
+    if no tweets match, return nil"
+    [tweet-list]
+    (loop [running-list tweet-list]
+      (if (twit/check-length (first running-list))
+        (first running-list)
+        (recur (rest running-list)))))
 
 (defn -main
   "Create a message and tweet it out"
   [& args]
-  (twit/tweet
-   (str "Finally making some updates to the plot generator "
-        twit/rpg-story-bot-hashtag))
+  (twit/tweet (tweetable-message (build-messages 10)))
+  (twit/close)
   (System/exit 0))

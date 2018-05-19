@@ -1,32 +1,23 @@
-# rpg-story-bot
+# RPG Story Bot
 
-FIXME: description
+A Twitter bot used to tweet out plot hooks, jokes, and ideas for dungeon masters and RPG fans.
 
 ## Installation
 
-Download from http://example.com/FIXME.
+Clone this repository to your local workstation and build it with [Leiningen.](https://leiningen.org)
 
 ## Usage
 
-FIXME: explanation
+Ensure that you have defined system variables with the following names for your Twitter credentials:
+  * TWITTER_CONSUMER_KEY
+  * TWITTER_CONSUMER_SECRET
+  * TWITTER_ACCESS_TOKEN
+  * TWITTER_ACCESS_TOKEN_SECRET
 
-    $ java -jar rpg-story-bot-0.1.0-standalone.jar [args]
-
-## Options
-
-FIXME: listing of options this app accepts.
-
-## Examples
-
-...
-
-### Bugs
-
-...
-
-### Any Other Sections
-### That You Think
-### Might be Useful
+Then execute:
+```
+  $ lein run
+```
 
 ## License
 Distributed under the Eclipse Public License either version 1.0 or (at
