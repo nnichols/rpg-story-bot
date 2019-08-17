@@ -1,5 +1,5 @@
 (ns rpg-story-bot.twitter-interface-test
-  (:require [clojure.test                    :refer :all]
+  (:require [clojure.test :refer :all]
             [rpg-story-bot.twitter-interface :as twit]))
 
 (deftest key-tests

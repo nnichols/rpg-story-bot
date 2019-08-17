@@ -1,8 +1,8 @@
 (ns rpg-story-bot.forms
-  (:require [story-elements.beings            :as sb]
-            [story-elements.titles            :as st]
+  (:require [story-elements.beings :as sb]
+            [story-elements.titles :as st]
             [story-elements.player-attributes :as pa]
-            [rpg-story-bot.utility            :as util])
+            [rpg-story-bot.utility :as util])
   (:gen-class))
 
 (defn since-running

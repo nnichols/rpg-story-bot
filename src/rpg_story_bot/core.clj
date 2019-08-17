@@ -1,5 +1,5 @@
 (ns rpg-story-bot.core
-  (:require [rpg-story-bot.forms             :as fm]
+  (:require [rpg-story-bot.forms :as fm]
             [rpg-story-bot.twitter-interface :as twit])
   (:gen-class))
 
