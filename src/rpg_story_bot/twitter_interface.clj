@@ -1,8 +1,8 @@
 (ns rpg-story-bot.twitter-interface
-  (:require [twitter.oauth       :as oauth]
+  (:require [twitter.oauth :as oauth]
             [twitter.api.restful :as rest]
-            [clojure.data.json   :as json]
-            [http.async.client   :as ac])
+            [clojure.data.json :as json]
+            [http.async.client :as ac])
   (:gen-class))
 
 (def consumer-key
@@ -26,11 +26,7 @@
 
 (def credentials
   "Build sign on credentials for Twitter"
-  (oauth/make-oauth-creds
-   consumer-key
-   consumer-key-secret
-   access-token
-   access-token-secret))
+  (oauth/make-oauth-creds consumer-key consumer-key-secret access-token access-token-secret))
 
 (defn tweet
   "Attempt to post message on Twitter"

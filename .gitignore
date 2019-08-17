@@ -9,5 +9,11 @@ pom.xml.asc
 /.nrepl-port
 .hgignore
 .hg/
-*.iml
+.bikeshed
+.eastwood
+.yagni
 /.idea
+*.iml
+.DS_Store
+.DS_Store?
+._*
