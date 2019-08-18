@@ -9,13 +9,13 @@
   (take n (repeatedly #(fm/random-message))))
 
 (defn tweetable-message
-   "Takes a collection of messages and returns the first one that is tweetable,
+  "Takes a collection of messages and returns the first one that is tweetable,
     if no tweets match, return nil"
-    [tweet-list]
-    (loop [running-list tweet-list]
-      (if (twit/check-length (first running-list))
-        (first running-list)
-        (recur (rest running-list)))))
+  [tweet-list]
+  (loop [running-list tweet-list]
+    (if (twit/check-length (first running-list))
+      (first running-list)
+      (recur (rest running-list)))))
 
 (defn -main
   "Create a message and tweet it out"

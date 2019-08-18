@@ -1,6 +1,6 @@
-(ns story-elements.player-attributes
-  (:require [story-elements.descriptors :as ds])
-  (:gen-class))
+(ns rpg-story-bot.story-elements.player-attributes
+  "Required attributes of player characters"
+  (:require [rpg-story-bot.story-elements.descriptors :as ds]))
 
 (def dragonborn-list
   "Populate a list of all dragonborn types by color"
@@ -15,21 +15,17 @@
    key: race
    value(s): racial subtypes"
   {:human ["Human"]
-   :dwarf ["Dwarf"
-           "Hill Dwarf"
+   :dwarf ["Hill Dwarf"
            "Mountain Dwarf"
            "Duergar"],
-   :elf ["Elf"
-         "High Elf"
+   :elf ["High Elf"
          "Wood Elf"
          "Drow"
          "Sea Elf"],
-   :halfling ["Halfling"
-              "Lightfoot Halfling"
+   :halfling ["Lightfoot Halfling"
               "Stout Halfling"],
    :dragonborn dragonborn-list,
-   :gnome ["Gnome"
-           "Forest Gnome"
+   :gnome ["Forest Gnome"
            "Rock Gnome"
            "Svirfneblin"],
    :half-elf ["Half-Elf"],
@@ -68,21 +64,18 @@
   "A map of vectors indexed by the following-
      key: class
      value(s): class variants"
-  {:barbarian ["Barbarian"
-               "Path of the Berserker Barbarian"
+  {:barbarian ["Path of the Berserker Barbarian"
                "Path of the Totem Warrior Barbarian"
                "Path of the Zealot Barbarian"
                "Path of the Ancestral Guardian"
                "Path of the Storm Herald Barbarian"
                "Battlerager Barbarian"],
-   :bard ["Bard"
-          "College of Lore Bard"
+   :bard ["College of Lore Bard"
           "College of Valor Bard"
           "College of Glamour Bard"
           "College of Swords Bard"
           "College of Whispers Bard"],
-   :cleric ["Cleric"
-            "War Domain Cleric"
+   :cleric ["War Domain Cleric"
             "Life Domain Cleric"
             "Light Domain Cleric"
             "Nature Domain Cleric"
@@ -91,40 +84,34 @@
             "Knowledge Domain Cleric"
             "Forge Domain Cleric"
             "Grave Domain Cleric"],
-   :druid ["Druid"
-           "Circle of the Land Druid"
+   :druid ["Circle of the Land Druid"
            "Circle of the Moon Druid"
            "Circle of Dreams Druid"
            "Circle of the Shepherd Druid"],
-   :fighter ["Fighter"
-             "Champion"
+   :fighter ["Champion"
              "Battle Master"
              "Eldritch Knight"
              "Strider"
              "Arcane Archer"
              "Cavalier"
              "Samurai"],
-   :monk ["Monk"
-          "Way of the Open Hand Monk"
+   :monk ["Way of the Open Hand Monk"
           "Way of Shadow Monk"
           "Way of the Four Elements Monk"
           "Way of the Kensei Monk"
           "Way of the Sun Soul Monk"
           "Way of the Drunken Master Monk"],
-   :paladin ["Paladin"
-             "Oath of Devotion Paladin"
+   :paladin ["Oath of Devotion Paladin"
              "Oath of the Ancients Paladin"
              "Oath of Vengeance Paladin"
              "Oath of Conquest Paladin"
              "Oath of Redemption Paladin"],
-   :ranger ["Ranger"
-            "Hunter"
+   :ranger ["Hunter"
             "Beast Master"
             "Gloom Stalker"
             "Monster Slayer"
             "Horizon Walker"],
-   :rogue ["Rogue"
-           "Thief"
+   :rogue ["Thief"
            "Assassin"
            "Arcane Trickster"
            "Fey Knight"
@@ -132,20 +119,17 @@
            "Rogue Mastermind"
            "Inquisitve Rogue"
            "Scout"],
-   :sorcerer ["Sorcerer"
-              "Sorcerer of a Draconic Bloodline"
+   :sorcerer ["Sorcerer of a Draconic Bloodline"
               "Wild Magic Sorcerer"
               "Sorcerer of a Divine Soul"
               "Storm Sorcerer"
               "Shadow Sorcerer"],
-   :warlock ["Warlock"
-             "Celestial Warlock"
+   :warlock ["Celestial Warlock"
              "Hexblade Warlock"
              "Warlock of the Archfey"
              "Fiendish Warlock"
              "Warlock of the Great Old One"],
-   :wizard ["Wizard"
-            "Abjuration Wizard"
+   :wizard ["Abjuration Wizard"
             "Conjuror"
             "Divination Wizard"
             "Enchanter"

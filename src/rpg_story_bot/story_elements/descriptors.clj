@@ -1,5 +1,5 @@
-(ns story-elements.descriptors
-  (:gen-class))
+(ns rpg-story-bot.story-elements.descriptors
+  "Various adjectives")
 
 (def chromatics
   "A vector of strings of chromatic colors"

@@ -33,9 +33,7 @@
   [message]
   (try
     (rest/statuses-update :oauth-creds credentials
-                          :params {:status (str message
-                                                " "
-                                                rpg-story-bot-hashtag)})
+                          :params {:status (str message " " rpg-story-bot-hashtag)})
     (catch Throwable t
       (println (.getMessage t)))))
 

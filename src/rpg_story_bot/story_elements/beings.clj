@@ -1,5 +1,5 @@
-(ns story-elements.beings
-  (:gen-class))
+(ns rpg-story-bot.story-elements.beings
+  "Living beings")
 
 (def beasts
   "A vector of Strings representing beasts (pluralized)"
