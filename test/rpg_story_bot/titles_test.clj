@@ -1,6 +1,6 @@
 (ns rpg-story-bot.titles-test
   (:require [clojure.test :refer :all]
-            [story-elements.titles :as ts]))
+            [rpg-story-bot.story-elements.titles :as ts]))
 
 (deftest title-tests
   (testing "Ensure titling a person doesn't remove the person passed"

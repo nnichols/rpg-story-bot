@@ -1,5 +1,5 @@
-(ns story-elements.titles
-  (:gen-class))
+(ns rpg-story-bot.story-elements.titles
+  "Titles of nobility that mat apply to characters")
 
 (def prefix-titles
   "A vector of Strings representing before-name titles"
