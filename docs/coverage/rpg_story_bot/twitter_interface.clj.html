@@ -1,0 +1,152 @@
+<html>
+ <head>
+   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <link rel="stylesheet" href="../coverage.css"/>  <title> rpg_story_bot/twitter_interface.clj </title>
+ </head>
+ <body>
+<span class="covered" title="1 out of 1 forms covered">
+                001&nbsp;&nbsp;(ns&nbsp;rpg-story-bot.twitter-interface
+                </span><br/>
+<span class="not-tracked" title="0 out of 0 forms covered">
+                002&nbsp;&nbsp;&nbsp;&nbsp;(:require&nbsp;[twitter.oauth&nbsp;:as&nbsp;oauth]
+                </span><br/>
+<span class="not-tracked" title="0 out of 0 forms covered">
+                003&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[twitter.api.restful&nbsp;:as&nbsp;rest]
+                </span><br/>
+<span class="not-tracked" title="0 out of 0 forms covered">
+                004&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[clojure.data.json&nbsp;:as&nbsp;json]
+                </span><br/>
+<span class="not-tracked" title="0 out of 0 forms covered">
+                005&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[http.async.client&nbsp;:as&nbsp;ac])
+                </span><br/>
+<span class="not-tracked" title="0 out of 0 forms covered">
+                006&nbsp;&nbsp;&nbsp;&nbsp;(:gen-class))
+                </span><br/>
+<span class="blank" title="0 out of 0 forms covered">
+                007&nbsp;&nbsp;
+                </span><br/>
+<span class="covered" title="1 out of 1 forms covered">
+                008&nbsp;&nbsp;(def&nbsp;consumer-key
+                </span><br/>
+<span class="covered" title="2 out of 2 forms covered">
+                009&nbsp;&nbsp;&nbsp;&nbsp;(System&#x2F;getenv&nbsp;&quot;TWITTER_CONSUMER_KEY&quot;))
+                </span><br/>
+<span class="blank" title="0 out of 0 forms covered">
+                010&nbsp;&nbsp;
+                </span><br/>
+<span class="covered" title="1 out of 1 forms covered">
+                011&nbsp;&nbsp;(def&nbsp;consumer-key-secret
+                </span><br/>
+<span class="covered" title="2 out of 2 forms covered">
+                012&nbsp;&nbsp;&nbsp;&nbsp;(System&#x2F;getenv&nbsp;&quot;TWITTER_CONSUMER_SECRET&quot;))
+                </span><br/>
+<span class="blank" title="0 out of 0 forms covered">
+                013&nbsp;&nbsp;
+                </span><br/>
+<span class="covered" title="1 out of 1 forms covered">
+                014&nbsp;&nbsp;(def&nbsp;access-token
+                </span><br/>
+<span class="covered" title="2 out of 2 forms covered">
+                015&nbsp;&nbsp;&nbsp;&nbsp;(System&#x2F;getenv&nbsp;&quot;TWITTER_ACCESS_TOKEN&quot;))
+                </span><br/>
+<span class="blank" title="0 out of 0 forms covered">
+                016&nbsp;&nbsp;
+                </span><br/>
+<span class="covered" title="1 out of 1 forms covered">
+                017&nbsp;&nbsp;(def&nbsp;access-token-secret
+                </span><br/>
+<span class="covered" title="2 out of 2 forms covered">
+                018&nbsp;&nbsp;&nbsp;&nbsp;(System&#x2F;getenv&nbsp;&quot;TWITTER_ACCESS_TOKEN_SECRET&quot;))
+                </span><br/>
+<span class="blank" title="0 out of 0 forms covered">
+                019&nbsp;&nbsp;
+                </span><br/>
+<span class="covered" title="2 out of 2 forms covered">
+                020&nbsp;&nbsp;(def&nbsp;max-username-length
+                </span><br/>
+<span class="not-tracked" title="0 out of 0 forms covered">
+                021&nbsp;&nbsp;&nbsp;&nbsp;&quot;Maximum&nbsp;twitter&nbsp;username&nbsp;length&nbsp;+&nbsp;1&nbsp;to&nbsp;account&nbsp;for&nbsp;@&quot;
+                </span><br/>
+<span class="not-tracked" title="0 out of 0 forms covered">
+                022&nbsp;&nbsp;&nbsp;&nbsp;16)
+                </span><br/>
+<span class="blank" title="0 out of 0 forms covered">
+                023&nbsp;&nbsp;
+                </span><br/>
+<span class="covered" title="2 out of 2 forms covered">
+                024&nbsp;&nbsp;(def&nbsp;rpg-story-bot-hashtag
+                </span><br/>
+<span class="not-tracked" title="0 out of 0 forms covered">
+                025&nbsp;&nbsp;&nbsp;&nbsp;&quot;#rpgstorybot&quot;)
+                </span><br/>
+<span class="blank" title="0 out of 0 forms covered">
+                026&nbsp;&nbsp;
+                </span><br/>
+<span class="covered" title="1 out of 1 forms covered">
+                027&nbsp;&nbsp;(def&nbsp;credentials
+                </span><br/>
+<span class="not-tracked" title="0 out of 0 forms covered">
+                028&nbsp;&nbsp;&nbsp;&nbsp;&quot;Build&nbsp;sign&nbsp;on&nbsp;credentials&nbsp;for&nbsp;Twitter&quot;
+                </span><br/>
+<span class="covered" title="6 out of 6 forms covered">
+                029&nbsp;&nbsp;&nbsp;&nbsp;(oauth&#x2F;make-oauth-creds&nbsp;consumer-key&nbsp;consumer-key-secret&nbsp;access-token&nbsp;access-token-secret))
+                </span><br/>
+<span class="blank" title="0 out of 0 forms covered">
+                030&nbsp;&nbsp;
+                </span><br/>
+<span class="covered" title="1 out of 1 forms covered">
+                031&nbsp;&nbsp;(defn&nbsp;tweet
+                </span><br/>
+<span class="not-tracked" title="0 out of 0 forms covered">
+                032&nbsp;&nbsp;&nbsp;&nbsp;&quot;Attempt&nbsp;to&nbsp;post&nbsp;message&nbsp;on&nbsp;Twitter&quot;
+                </span><br/>
+<span class="not-tracked" title="0 out of 0 forms covered">
+                033&nbsp;&nbsp;&nbsp;&nbsp;[message]
+                </span><br/>
+<span class="not-covered" title="0 out of 1 forms covered">
+                034&nbsp;&nbsp;&nbsp;&nbsp;(try
+                </span><br/>
+<span class="not-covered" title="0 out of 5 forms covered">
+                035&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(rest&#x2F;statuses-update&nbsp;:oauth-creds&nbsp;credentials
+                </span><br/>
+<span class="not-covered" title="0 out of 7 forms covered">
+                036&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:params&nbsp;{:status&nbsp;(str&nbsp;message&nbsp;&quot;&nbsp;&quot;&nbsp;rpg-story-bot-hashtag)})
+                </span><br/>
+<span class="not-tracked" title="0 out of 0 forms covered">
+                037&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(catch&nbsp;Throwable&nbsp;t
+                </span><br/>
+<span class="not-covered" title="0 out of 3 forms covered">
+                038&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(println&nbsp;(.getMessage&nbsp;t)))))
+                </span><br/>
+<span class="blank" title="0 out of 0 forms covered">
+                039&nbsp;&nbsp;
+                </span><br/>
+<span class="covered" title="1 out of 1 forms covered">
+                040&nbsp;&nbsp;(defn&nbsp;check-length
+                </span><br/>
+<span class="not-tracked" title="0 out of 0 forms covered">
+                041&nbsp;&nbsp;&nbsp;&nbsp;&quot;Ensure&nbsp;tweet-to-check&nbsp;will&nbsp;fit&nbsp;the&nbsp;standard&nbsp;allowed&nbsp;width&quot;
+                </span><br/>
+<span class="not-tracked" title="0 out of 0 forms covered">
+                042&nbsp;&nbsp;&nbsp;&nbsp;[tweet-to-check]
+                </span><br/>
+<span class="not-covered" title="0 out of 11 forms covered">
+                043&nbsp;&nbsp;&nbsp;&nbsp;(&gt;=&nbsp;280&nbsp;(+&nbsp;(count&nbsp;tweet-to-check)&nbsp;(count&nbsp;rpg-story-bot-hashtag))))
+                </span><br/>
+<span class="blank" title="0 out of 0 forms covered">
+                044&nbsp;&nbsp;
+                </span><br/>
+<span class="covered" title="1 out of 1 forms covered">
+                045&nbsp;&nbsp;(defn&nbsp;close
+                </span><br/>
+<span class="not-tracked" title="0 out of 0 forms covered">
+                046&nbsp;&nbsp;&nbsp;&nbsp;&quot;Clean-up&nbsp;all&nbsp;resources&quot;
+                </span><br/>
+<span class="not-tracked" title="0 out of 0 forms covered">
+                047&nbsp;&nbsp;&nbsp;&nbsp;[]
+                </span><br/>
+<span class="not-covered" title="0 out of 4 forms covered">
+                048&nbsp;&nbsp;&nbsp;&nbsp;(ac&#x2F;close&nbsp;(twitter.core&#x2F;default-client)))
+                </span><br/>
+ </body>
+</html>
