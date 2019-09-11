@@ -1,4 +1,5 @@
 # RPG Story Bot
+![Github Runner](https://github.com/nnichols/rpg-story-bot/workflows/Clojure%20CI/badge.svg)
 
 A Twitter bot used to tweet out plot hooks, jokes, and ideas for dungeon masters and RPG fans.
 
