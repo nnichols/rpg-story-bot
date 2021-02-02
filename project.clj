@@ -11,7 +11,7 @@
                  [com.fzakaria/slf4j-timbre  "0.3.20"]
                  [org.slf4j/log4j-over-slf4j "1.7.14"]
                  [org.slf4j/jul-to-slf4j     "1.7.14"]
-                 [org.slf4j/jcl-over-slf4j   "1.7.14"]]
+                 [org.slf4j/jcl-over-slf4j   "1.7.30"]]
   :main rpg-story-bot.core
   :bikeshed {:long-lines false}
   :eastwood {:add-linters [:unused-fn-args :unused-private-vars]}
