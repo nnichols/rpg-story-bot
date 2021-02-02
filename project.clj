@@ -3,7 +3,7 @@
   :url "https://github.com/nnichols/rpg-story-bot"
   :license {:name "Eclipse Public License"
             :url "http://www.eclipse.org/legal/epl-v10.html"}
-  :dependencies [[org.clojure/clojure        "1.9.0-alpha9"] ;;Locked by twitter-api
+  :dependencies [[org.clojure/clojure        "1.10.2"] ;;Locked by twitter-api
                  [org.clojure/test.check     "0.9.0"]
                  [org.clojure/tools.logging  "0.4.0"]
                  [twitter-api                "0.7.8"]
