@@ -8,7 +8,7 @@
                  [org.clojure/tools.logging  "0.4.0"]
                  [twitter-api                "0.7.8"]
                  [clj-http                   "2.1.0"]
-                 [com.fzakaria/slf4j-timbre  "0.3.8"]
+                 [com.fzakaria/slf4j-timbre  "0.3.20"]
                  [org.slf4j/log4j-over-slf4j "1.7.14"]
                  [org.slf4j/jul-to-slf4j     "1.7.14"]
                  [org.slf4j/jcl-over-slf4j   "1.7.14"]]
