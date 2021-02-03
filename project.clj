@@ -5,7 +5,7 @@
             :url "http://www.eclipse.org/legal/epl-v10.html"}
   :dependencies [[org.clojure/clojure        "1.10.2"] ;;Locked by twitter-api
                  [org.clojure/test.check     "1.1.0"]
-                 [org.clojure/tools.logging  "0.4.0"]
+                 [org.clojure/tools.logging  "1.1.0"]
                  [twitter-api                "0.7.8"]
                  [clj-http                   "2.1.0"]
                  [com.fzakaria/slf4j-timbre  "0.3.20"]
